@@ -1,0 +1,471 @@
+// Szövegek két nyelven. A projektek sorrendje egyezik a src/data/portfolioData.js
+// `projects` tömbjével (index alapján párosítva).
+
+const en = {
+  lang: { en: 'English', hu: 'Magyar' },
+  nav: {
+    about: 'About', focus: 'Focus', projects: 'Projects',
+    skills: 'Skills', education: 'Education', contact: 'Contact',
+  },
+  hero: {
+    name: 'István Zénó Bartha',
+    title: 'IT Operations Engineering Student',
+    summary:
+      'I am an IT Operations Engineering student at Óbuda University, interested in how IT systems are kept running reliably — and how automation and AI can make that work simpler. I am looking for an opportunity to join an Operations team, where I can contribute, learn from experienced colleagues and grow in a real corporate environment.',
+    facts: ['Óbuda University', 'GPA 4.2 / 5.0', 'English B2', 'Budapest, Hungary'],
+    btnProjects: 'Projects',
+    btnContact: 'Get in touch',
+    btnCV: 'Download CV',
+    badge: 'IT Operations Engineering · Óbuda University',
+    gpaLabel: 'GPA',
+    currentRole: 'Looking for',
+    currentRoleValue: 'Operations team role',
+  },
+  stats: [
+    { label: 'GPA', value: '4.2' },
+    { label: 'Projects', value: '7' },
+    { label: 'Hackathons', value: '2' },
+    { label: 'Technologies', value: '30+' },
+  ],
+  focus: {
+    pipelineTitle: 'How my three personal projects fit together',
+    pipeline: [
+      { name: 'System Process Monitor', role: 'watches hosts & processes' },
+      { name: 'API Health-Checker', role: 'checks services from the outside' },
+      { name: 'AI Log Analyzer', role: 'explains what went wrong' },
+    ],
+    sectionTitle: 'Focus',
+    intro: 'The areas I work on in my studies and my own projects.',
+    cards: [
+      {
+        title: 'Workflow automation',
+        text: 'Turning repetitive, manual steps into reliable, well-documented workflows with clear inputs and outputs.',
+      },
+      {
+        title: 'AI-assisted workflows',
+        text: 'Using language models where they genuinely help — classification, summarisation, knowledge lookup — with a human review step for anything uncertain.',
+      },
+      {
+        title: 'Monitoring & reliability',
+        text: 'Metrics, baselines, health checks and alerting; understanding incident and change management based on ITIL concepts.',
+      },
+      {
+        title: 'Systems fundamentals',
+        text: 'Networking, Linux and databases — and down to register-level embedded C, so I can follow a problem below the abstraction.',
+      },
+    ],
+    goalsTitle: 'Development goals',
+    goals: [
+      { title: 'Real corporate experience', text: 'Learning how operations work at enterprise scale — processes, escalation, change management, cross-team collaboration and business impact. A university course can introduce these, but only a real operations team can teach them.' },
+      { title: 'IT Operations specialisation', text: 'Specialising in IT operations at Óbuda University, with the aim of writing my thesis on AI-assisted incident management.' },
+      { title: 'Industry certifications', text: 'ITIL 4 Foundation and Microsoft Azure Fundamentals, followed by further platform certifications as I gain hands-on experience.' },
+      { title: 'A new language at B2', text: 'Obtaining a B2 certificate in German or Spanish to work effectively in international, multilingual teams.' },
+      { title: 'Long term', text: 'Growing into an automation / site reliability engineer who builds self-healing operations — automation handles the routine, people focus on the problems that really need them.' },
+    ],
+  },
+  projects: {
+    sectionTitle: 'Projects',
+    subtitle: 'Operations & AI workflow projects plus university work at Óbuda University.',
+    tabs: { all: 'All', ops: 'Ops & AI', software: 'Software', hardware: 'Hardware & Robotics' },
+    categoryLabels: { ops: 'Ops & AI', software: 'Software', hardware: 'Hardware & Robotics' },
+    privateLabel: 'Private',
+    universityLabel: 'University project',
+    opsLabel: 'Personal project',
+    detailsLabel: 'Details',
+    showMore: '+ {n} more projects',
+    showLess: 'Show less',
+    items: [
+      {
+        title: 'System Process Monitor',
+        description: 'A lightweight, locally running monitoring agent that watches the machine and its processes (CPU, memory, disk, network, process state), learns their normal behaviour and raises an alert when something deviates from it.',
+        details: [
+          'Python agent collecting system- and process-level metrics (CPU, memory, disk, network, processes and threads) and storing them as time series in SQL (SQLite).',
+          'Anomaly detection with rolling baselines (EWMA + z-score) instead of fixed thresholds, so the machine’s usual load does not trigger alerts — only sudden deviations do.',
+          'Alerts are deduplicated and forwarded as incidents via webhook / REST (open and resolve, with a stable dedup key and retries), so a ticketing system can process them.',
+          'Desktop interface with a live dashboard, SQL reports and a rule editor. The agent can also run headless and in Docker.',
+        ],
+      },
+      {
+        title: 'Automated API Health-Checker',
+        description: 'A scheduled checker that tests REST endpoints from the outside — status codes, response times and response contents — tracks uptime against an SLA target and alerts only when a failure is confirmed.',
+        details: [
+          'Endpoints and expectations are declared in a YAML file: expected status code, latency limit and JSON schema of the response.',
+          'Runs on a schedule and as a step in an Azure DevOps pipeline, so a failing deployment is caught before users notice it.',
+          'Retries and confirmation logic prevent false alarms; repeated failures are escalated, and uptime / SLA compliance is reported per endpoint.',
+          'A simple HTML/CSS status page shows the current state and response-time history of every service.',
+        ],
+      },
+      {
+        title: 'AI Log Analyzer',
+        description: 'A tool that reads application and system logs, groups similar errors together and uses an LLM to summarise what went wrong, how severe it is and what to check first — with a human review step for anything uncertain.',
+        details: [
+          'Parses and normalises logs from different sources, then clusters recurring errors so hundreds of lines become a handful of distinct issues.',
+          'An LLM summarises each issue, suggests a probable root cause and points to the relevant runbook or knowledge-base article (retrieval over internal documentation).',
+          'Severity classification with a confidence threshold: low-confidence results are flagged for human review instead of being trusted blindly.',
+          'Produces a short daily report and can attach its findings to an incident raised by the System Process Monitor or the API Health-Checker.',
+        ],
+      },
+      {
+        title: 'IT Company Business & Project Plan',
+        description: 'Complete business and project plan for a fictional IT services Ltd. (Kft.): service portfolio, operating processes, organisation, budget, schedule and risk analysis.',
+        details: [
+          'Defined the service portfolio, target market and operating model of a fictional IT services company.',
+          'Planned the internal processes (support, delivery, onboarding), the organisational structure and responsibilities.',
+          'Prepared the budget, a timeline with milestones and a risk register with mitigation plans.',
+        ],
+      },
+      {
+        title: 'Terminal Raycaster – Doom-inspired Engine in C#',
+        description: 'A first-person, Doom-inspired raycasting game rendered entirely in the terminal, with the game logic and engine written in C#.',
+        details: [
+          'Implemented a raycasting renderer that draws a 3D-looking view using characters and shading in the console.',
+          'Backend game logic in C#: map loading, player movement, collision detection and a fixed-timestep game loop.',
+          'Optimised rendering to keep a smooth frame rate in a plain terminal window.',
+        ],
+      },
+      {
+        title: 'Smart Bin – Register-level Arduino',
+        description: 'A smart waste bin built on Arduino, programmed at register level in C instead of using the high-level Arduino libraries.',
+        details: [
+          'Configured timers, GPIO and interrupts directly through the microcontroller registers.',
+          'Sensor-driven behaviour: detects an approaching user, opens the lid automatically and measures the fill level.',
+          'Gave a solid understanding of what happens beneath the abstractions — useful when debugging hardware-related issues.',
+        ],
+      },
+      {
+        title: 'ROS2 Robot Vacuum Control',
+        description: 'Control software for a robot vacuum in ROS2: nodes, topics and a movement / coverage strategy for the robot.',
+        details: [
+          'Built ROS2 nodes communicating over topics to process sensor data and send velocity commands.',
+          'Implemented the movement logic for obstacle handling and covering the area to be cleaned.',
+          'Tested the behaviour in simulation.',
+        ],
+      },
+    ],
+  },
+  skills: {
+    sectionTitle: 'Skills',
+    categories: {
+      'Programming & scripting': ['Python', 'C#', 'C', 'SQL', 'Bash', 'PowerShell', 'HTML', 'CSS'],
+      'Ops & AI workflow': ['ITSM / ITIL basics', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomaly detection', 'Runbook automation', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflows'],
+      'Systems & tools': ['Linux basics', 'Networking (TCP/IP, DNS, HTTP)', 'Docker basics', 'Grafana / Prometheus', 'Postman', 'REST API / webhooks', 'Git / GitHub', 'CI/CD basics', 'Azure DevOps', 'Azure fundamentals', 'Microsoft 365'],
+      'Hardware & robotics': ['Arduino', 'Register-level C', 'ROS2', 'Sensors & interrupts'],
+      'Mathematics': ['Discrete mathematics', 'Calculus (Analysis)'],
+      'Personal skills': ['Problem solving & debugging', 'Teamwork under time pressure', 'Clear documentation', 'Communication in HU & EN', 'Project planning', 'Agile / Scrum basics'],
+    },
+  },
+  education: {
+    sectionTitle: 'Education',
+    currentLabel: 'In progress',
+    items: [
+      {
+        school: 'Óbuda University',
+        degree: 'BProf IT Operations Engineering (Üzemmérnök-informatikus)',
+        field: 'Multiple university projects (C#, ROS2, embedded systems, project planning)',
+        gpa: '4.2 / 5.0',
+        period: 'Sept 2024 – present',
+        location: 'Budapest, Hungary',
+        current: true,
+        highlights: ['Relevant coursework: Computer Networks, Databases, Embedded and Sensor Systems, Systems Theory, Fundamentals of Software Development, Problem Solving with Programming, Electronics, Entrepreneurship and Project Management, Discrete Mathematics, Calculus (Analysis)'],
+      },
+      {
+        school: 'Hungarian University of Agriculture and Life Sciences (MATE)',
+        degree: 'BSc studies in Food Engineering',
+        field: 'Not completed – changed direction to IT',
+        gpa: null,
+        period: '2021 – 2024',
+        location: 'Budapest, Hungary',
+        current: false,
+        highlights: [],
+      },
+      {
+        school: "Saint Margaret's Grammar School (Szent Margit Gimnázium)",
+        degree: 'School-leaving exam (Érettségi)',
+        field: 'Advanced level: English · Standard level: Mathematics, IT',
+        gpa: null,
+        period: '2017 – 2021',
+        location: 'Budapest, Hungary',
+        current: false,
+        highlights: [],
+      },
+      {
+        school: 'Ádám Jenő Primary School, Újbuda',
+        degree: 'Primary school',
+        field: '',
+        gpa: null,
+        period: '2009 – 2017',
+        location: 'Budapest, Hungary',
+        current: false,
+        highlights: [],
+      },
+    ],
+    hackathonsTitle: 'Hackathons',
+    hackathons: [
+      { name: 'Byborg AI Hackathon', detail: 'AI-focused developer competition by Byborg Enterprises', year: '2024' },
+      { name: 'GDE MIT Hackathon', detail: 'Innovation developer competition · team workflow in Azure DevOps', year: '2026' },
+    ],
+    volunteeringTitle: 'Volunteering',
+    volunteering: [
+      { name: 'Hospital volunteer', detail: 'Volunteer work at a hospital (2021)' },
+      { name: 'Library volunteer', detail: 'Volunteer work at a library in my final year of secondary school (2020 – 2021)' },
+    ],
+    hobbiesTitle: 'Hobbies',
+    hobbies: [
+      { icon: 'esport', name: 'Esports' },
+      { icon: 'cooking', name: 'Cooking' },
+      { icon: 'hiking', name: 'Hiking' },
+      { icon: 'cycling', name: 'Cycling' },
+      { icon: 'reading', name: 'Reading' },
+      { icon: 'series', name: 'TV series' },
+    ],
+    extrasTitle: 'Languages & Certificates',
+    extras: [
+      { name: 'English', detail: 'B2 · Euroexam B2 language exam (2020) · advanced-level school-leaving exam' },
+      { name: 'Hungarian', detail: 'Native' },
+      { name: 'Driving licence', detail: 'Category B' },
+    ],
+  },
+  footer: {
+    availableLabel: 'Open to opportunities',
+    heading: 'Contact',
+    description: 'I am happy to hear about internship or junior opportunities in IT operations and automation.',
+    copyright: '© 2026 Bartha István Zénó',
+    location: 'Budapest, Hungary',
+  },
+};
+
+const hu = {
+  lang: { en: 'English', hu: 'Magyar' },
+  nav: {
+    about: 'Rólam', focus: 'Fókusz', projects: 'Projektek',
+    skills: 'Készségek', education: 'Tanulmányok', contact: 'Kapcsolat',
+  },
+  hero: {
+    name: 'Bartha István Zénó',
+    title: 'Üzemmérnök-informatikus hallgató',
+    summary:
+      'Üzemmérnök-informatikus hallgató vagyok az Óbudai Egyetemen. Érdekel, hogyan lehet az IT-rendszereket megbízhatóan működtetni — és hogyan tehetik ezt a munkát egyszerűbbé az automatizáció és az AI. Olyan lehetőséget keresek egy Operation teamben, ahol hozzá tudok tenni a csapat munkájához, tanulhatok tapasztalt kollégáktól, és valódi vállalati környezetben fejlődhetek.',
+    facts: ['Óbudai Egyetem', 'Átlag: 4.2 / 5.0', 'Angol B2', 'Budapest'],
+    btnProjects: 'Projektek',
+    btnContact: 'Kapcsolat',
+    btnCV: 'Önéletrajz letöltése',
+    badge: 'Üzemmérnök-informatikus · Óbudai Egyetem',
+    gpaLabel: 'Átlag',
+    currentRole: 'Amit keresek',
+    currentRoleValue: 'Operation team pozíció',
+  },
+  stats: [
+    { label: 'Tanulmányi átlag', value: '4.2' },
+    { label: 'Projekt', value: '7' },
+    { label: 'Hackathon', value: '2' },
+    { label: 'Technológia', value: '30+' },
+  ],
+  focus: {
+    pipelineTitle: 'Hogyan kapcsolódik egymáshoz a három saját projektem',
+    pipeline: [
+      { name: 'System Process Monitor', role: 'figyeli a gépeket és folyamatokat' },
+      { name: 'API Health-Checker', role: 'kívülről ellenőrzi a szolgáltatásokat' },
+      { name: 'AI Log Analyzer', role: 'megmagyarázza, mi romlott el' },
+    ],
+    sectionTitle: 'Fókusz',
+    intro: 'Azok a területek, amelyekkel a tanulmányaim és a saját projektjeim során foglalkozom.',
+    cards: [
+      {
+        title: 'Workflow automatizáció',
+        text: 'Ismétlődő, kézi lépések átalakítása megbízható, jól dokumentált munkafolyamatokká, egyértelmű be- és kimenetekkel.',
+      },
+      {
+        title: 'AI-támogatott munkafolyamatok',
+        text: 'Nyelvi modellek ott, ahol valóban segítenek — osztályozás, összefoglalás, tudásbázis-keresés —, bizonytalan esetben emberi ellenőrzéssel.',
+      },
+      {
+        title: 'Monitoring & megbízhatóság',
+        text: 'Metrikák, baseline-ok, health checkek és riasztás; az incidens- és változáskezelés ITIL-alapú megértése.',
+      },
+      {
+        title: 'Rendszeralapok',
+        text: 'Hálózatok, Linux és adatbázisok — egészen a regiszterszintű beágyazott C-ig, hogy egy hibát az absztrakció alatt is követni tudjak.',
+      },
+    ],
+    goalsTitle: 'Fejlődési céljaim',
+    goals: [
+      { title: 'Valódi vállalati tapasztalat', text: 'Megtapasztalni, hogyan működik az üzemeltetés nagyvállalati léptékben — folyamatok, eszkaláció, change management, csapatok közötti együttműködés és üzleti hatás. Ezeket az egyetem be tudja mutatni, de igazán csak egy valódi üzemeltetési csapatban lehet megtanulni.' },
+      { title: 'Üzemeltetési szakirány', text: 'Az Óbudai Egyetemen az üzemeltetésre szakosodom, a szakdolgozatomat pedig az AI-támogatott incidenskezelésről szeretném írni.' },
+      { title: 'Szakmai minősítések', text: 'ITIL 4 Foundation és Microsoft Azure Fundamentals, majd további platformminősítések, ahogy gyakorlatot szerzek.' },
+      { title: 'Új nyelv B2 szinten', text: 'Német vagy spanyol B2 nyelvvizsga megszerzése, hogy nemzetközi, többnyelvű csapatokban is hatékonyan dolgozzak.' },
+      { title: 'Hosszú távon', text: 'Automatizációs / site reliability mérnökké válni, aki öngyógyító üzemeltetést épít — a rutint az automatizáció viszi, az emberek pedig a valóban nehéz problémákra koncentrálhatnak.' },
+    ],
+  },
+  projects: {
+    sectionTitle: 'Projektek',
+    subtitle: 'Üzemeltetési és AI workflow projektek, valamint az Óbudai Egyetemen készült munkáim.',
+    tabs: { all: 'Összes', ops: 'Ops & AI', software: 'Szoftver', hardware: 'Hardver & Robotika' },
+    categoryLabels: { ops: 'Ops & AI', software: 'Szoftver', hardware: 'Hardver & Robotika' },
+    privateLabel: 'Privát',
+    universityLabel: 'Egyetemi projekt',
+    opsLabel: 'Saját projekt',
+    detailsLabel: 'Részletek',
+    showMore: '+{n} további projekt',
+    showLess: 'Kevesebb',
+    items: [
+      {
+        title: 'System Process Monitor',
+        description: 'Könnyűsúlyú, lokálisan futó monitorozó ágens, amely figyeli a gépet és a folyamatokat (CPU, memória, lemez, hálózat, folyamatállapot), megtanulja a normál működésüket, és riaszt, ha valami eltér tőle.',
+        details: [
+          'Python ágens, amely rendszer- és folyamatszintű metrikákat gyűjt (CPU, memória, lemez, hálózat, folyamatok és szálak), és idősorként SQL-ben (SQLite) tárolja őket.',
+          'Anomáliadetektálás gördülő baseline-nal (EWMA + z-score) fix küszöbök helyett, így a gép megszokott terhelése nem vált ki riasztást, csak a hirtelen eltérés.',
+          'A riasztásokat duplikációszűrés után incidensként továbbítja webhookon / REST-en (megnyitás és lezárás, stabil dedup kulccsal, újrapróbálással), így egy ticketkezelő rendszer fel tudja dolgozni őket.',
+          'Asztali felület élő dashboarddal, SQL-riportokkal és szabályszerkesztővel. Az ágens ablak nélkül és Dockerben is futtatható.',
+        ],
+      },
+      {
+        title: 'Automated API Health-Checker',
+        description: 'Ütemezetten futó ellenőrző, amely kívülről teszteli a REST végpontokat — státuszkód, válaszidő, válasz tartalma —, SLA-célhoz méri a rendelkezésre állást, és csak megerősített hiba esetén riaszt.',
+        details: [
+          'A végpontokat és az elvárásokat egy YAML-fájl írja le: elvárt státuszkód, válaszidő-limit és a válasz JSON-sémája.',
+          'Ütemezve és egy Azure DevOps pipeline lépéseként is fut, így egy hibás deploy még azelőtt kiderül, hogy a felhasználók észrevennék.',
+          'Újrapróbálás és megerősítési logika szűri a téves riasztásokat; az ismétlődő hibákat eszkalálja, és végpontonként riportolja a rendelkezésre állást / SLA-teljesülést.',
+          'Egyszerű HTML/CSS státuszoldal mutatja minden szolgáltatás aktuális állapotát és válaszidő-történetét.',
+        ],
+      },
+      {
+        title: 'AI Log Analyzer',
+        description: 'Eszköz, amely beolvassa az alkalmazás- és rendszerlogokat, csoportosítja a hasonló hibákat, és egy LLM segítségével összefoglalja, mi romlott el, mennyire súlyos, és mit érdemes először ellenőrizni — bizonytalan esetben emberi felülvizsgálattal.',
+        details: [
+          'Különböző forrásokból érkező logokat dolgoz fel és egységesít, majd klaszterezi az ismétlődő hibákat, így több száz sorból néhány jól elkülönülő probléma lesz.',
+          'Egy LLM összefoglalja az egyes problémákat, valószínű kiváltó okot javasol, és a releváns runbookra vagy tudásbázis-cikkre mutat (keresés a belső dokumentációban).',
+          'Súlyossági besorolás konfidencia-küszöbbel: a bizonytalan eredmények emberi felülvizsgálatra kerülnek, nem fogadja el őket vakon.',
+          'Rövid napi riportot készít, és a megállapításait hozzá tudja csatolni a System Process Monitor vagy az API Health-Checker által nyitott incidenshez.',
+        ],
+      },
+      {
+        title: 'IT Kft. vállalkozási projektterv',
+        description: 'Egy kitalált IT-szolgáltató Kft. teljes vállalkozási és projekttervének megtervezése és elkészítése: szolgáltatási portfólió, működési folyamatok, szervezet, költségvetés, ütemterv és kockázatelemzés.',
+        details: [
+          'Meghatároztam egy fiktív IT-szolgáltató cég szolgáltatási portfólióját, célpiacát és működési modelljét.',
+          'Megterveztem a belső folyamatokat (support, szállítás, ügyfél-onboarding), a szervezeti felépítést és a felelősségi köröket.',
+          'Elkészítettem a költségvetést, a mérföldkövekre bontott ütemtervet és a kockázatkezelési tervet.',
+        ],
+      },
+      {
+        title: 'Terminal Raycaster – Doom-ihletésű motor C#-ban',
+        description: 'Belső nézetes, Doom által ihletett raycasting játék, amely teljes egészében a terminálban fut; a játéklogika és a motor C#-ban készült.',
+        details: [
+          'Raycasting renderert írtam, amely karakterekkel és árnyalással rajzol 3D hatású nézetet a konzolba.',
+          'C# backend játéklogika: pályabetöltés, játékosmozgás, ütközésvizsgálat és fix időlépéses játékciklus.',
+          'A renderelést optimalizáltam, hogy egy sima terminálablakban is folyamatos legyen a képfrissítés.',
+        ],
+      },
+      {
+        title: 'Okos kuka – regiszterszintű Arduino',
+        description: 'Arduino-alapú okos szemetes, regiszterszinten programozva C-ben, a magas szintű Arduino-könyvtárak használata nélkül.',
+        details: [
+          'Az időzítőket, GPIO-t és megszakításokat közvetlenül a mikrokontroller regiszterein keresztül konfiguráltam.',
+          'Szenzorvezérelt működés: érzékeli a közeledő felhasználót, automatikusan nyitja a fedelet, és méri a telítettséget.',
+          'Mély megértést adott arról, mi történik az absztrakciók alatt — ez hardverközeli hibák keresésénél sokat segít.',
+        ],
+      },
+      {
+        title: 'ROS2 robotporszívó vezérlés',
+        description: 'Robotporszívó vezérlőszoftvere ROS2-ben: node-ok, topicok és mozgási / területlefedési stratégia a robot számára.',
+        details: [
+          'Topicokon kommunikáló ROS2 node-okat készítettem a szenzoradatok feldolgozására és a sebességparancsok kiadására.',
+          'Megvalósítottam az akadálykezelés és a takarítandó terület lefedésének mozgáslogikáját.',
+          'A működést szimulációban teszteltem.',
+        ],
+      },
+    ],
+  },
+  skills: {
+    sectionTitle: 'Készségek',
+    categories: {
+      'Programozás & szkriptelés': ['Python', 'C#', 'C', 'SQL', 'Bash', 'PowerShell', 'HTML', 'CSS'],
+      'Ops & AI workflow': ['ITSM / ITIL alapok', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomáliadetektálás', 'Runbook automatizáció', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflow-k'],
+      'Rendszerek & eszközök': ['Linux alapok', 'Hálózatok (TCP/IP, DNS, HTTP)', 'Docker alapok', 'Grafana / Prometheus', 'Postman', 'REST API / webhook', 'Git / GitHub', 'CI/CD alapok', 'Azure DevOps', 'Azure alapok', 'Microsoft 365'],
+      'Hardver & robotika': ['Arduino', 'Regiszterszintű C', 'ROS2', 'Szenzorok & megszakítások'],
+      'Matematika': ['Diszkrét matematika', 'Analízis'],
+      'Személyes készségek': ['Problémamegoldás & hibakeresés', 'Csapatmunka időnyomás alatt', 'Átlátható dokumentáció', 'Kommunikáció magyarul & angolul', 'Projekttervezés', 'Agile / Scrum alapok'],
+    },
+  },
+  education: {
+    sectionTitle: 'Tanulmányok',
+    currentLabel: 'Folyamatban',
+    items: [
+      {
+        school: 'Óbudai Egyetem',
+        degree: 'BProf Üzemmérnök-informatikus',
+        field: 'Több egyetemi projekt (C#, ROS2, beágyazott rendszerek, projekttervezés)',
+        gpa: '4.2 / 5.0',
+        period: '2024. szept. – jelenleg',
+        location: 'Budapest',
+        current: true,
+        highlights: ['Releváns tárgyak: Számítógép-hálózatok, Adatbázisok, Beágyazott és érzékelőrendszerek, Rendszerelmélet, Szoftverfejlesztés alapjai, Problémamegoldás programozással, Elektronika, Vállalkozás és projektmenedzsment, Diszkrét matematika, Analízis'],
+      },
+      {
+        school: 'Magyar Agrár- és Élettudományi Egyetem (MATE)',
+        degree: 'Élelmiszermérnök BSc tanulmányok',
+        field: 'Nem fejeztem be – szakmát váltottam az IT irányába',
+        gpa: null,
+        period: '2021 – 2024',
+        location: 'Budapest',
+        current: false,
+        highlights: [],
+      },
+      {
+        school: 'Szent Margit Gimnázium',
+        degree: 'Érettségi',
+        field: 'Emelt szint: Angol · Középszint: Matematika, Informatika',
+        gpa: null,
+        period: '2017 – 2021',
+        location: 'Budapest',
+        current: false,
+        highlights: [],
+      },
+      {
+        school: 'Újbudai Ádám Jenő Általános Iskola',
+        degree: 'Általános iskola',
+        field: '',
+        gpa: null,
+        period: '2009 – 2017',
+        location: 'Budapest',
+        current: false,
+        highlights: [],
+      },
+    ],
+    hackathonsTitle: 'Hackathonok',
+    hackathons: [
+      { name: 'Byborg AI Hackathon', detail: 'A Byborg Enterprises AI-fókuszú fejlesztői versenye', year: '2024' },
+      { name: 'GDE MIT Hackathon', detail: 'Innovációs fejlesztői verseny · csapatmunka Azure DevOps-ban', year: '2026' },
+    ],
+    volunteeringTitle: 'Önkéntesség',
+    volunteering: [
+      { name: 'Kórházi önkéntes', detail: 'Önkéntes munka kórházban (2021)' },
+      { name: 'Könyvtári önkéntes', detail: 'Önkéntes munka könyvtárban a gimnázium utolsó évében (2020 – 2021)' },
+    ],
+    hobbiesTitle: 'Hobbik',
+    hobbies: [
+      { icon: 'esport', name: 'E-sport' },
+      { icon: 'cooking', name: 'Főzés' },
+      { icon: 'hiking', name: 'Túrázás' },
+      { icon: 'cycling', name: 'Biciklizés' },
+      { icon: 'reading', name: 'Olvasás' },
+      { icon: 'series', name: 'Sorozatok' },
+    ],
+    extrasTitle: 'Nyelvtudás & bizonyítványok',
+    extras: [
+      { name: 'Angol', detail: 'B2 · Euroexam B2 nyelvvizsga (2020) · emelt szintű érettségi' },
+      { name: 'Magyar', detail: 'Anyanyelv' },
+      { name: 'Jogosítvány', detail: 'B kategória' },
+    ],
+  },
+  footer: {
+    availableLabel: 'Nyitott új lehetőségekre',
+    heading: 'Kapcsolat',
+    description: 'Szívesen hallok üzemeltetési és automatizációs gyakornoki vagy junior lehetőségekről.',
+    copyright: '© 2026 Bartha István Zénó',
+    location: 'Budapest, Magyarország',
+  },
+};
+
+const translations = { en, hu };
+export default translations;

@@ -1,0 +1,291 @@
+%-------------------------------------------------------------------------------
+% Zénó Bartha – Curriculum Vitae
+% Europass section structure, "Jake's Resume" visual style.
+% Compile: pdflatex / tectonic BarthaZeno_CV.tex  (needs zeno_cv_small.jpg)
+%-------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+%---------------------------- Colours & links ----------------------------------
+\definecolor{accent}{RGB}{28,63,110}   % deep navy
+\definecolor{muted}{RGB}{90,90,90}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+%---------------------------- Page layout --------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\pdfgentounicode=1
+
+%---------------------------- Sections -----------------------------------------
+\titleformat{\section}
+  {\vspace{-4pt}\color{accent}\scshape\raggedright\large}
+  {}{0em}{}
+  [\color{accent}\titlerule\vspace{-5pt}]
+
+%---------------------------- Custom commands ----------------------------------
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+
+% {Title}{Right top}{Subtitle}{Right bottom}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% {Title | stack}{Right label}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & \textit{\small\color{muted} #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Clickable GitHub icon next to a project title: \ghlink{repo-name}
+\newcommand{\ghuser}{juanmiguelaasg}
+\newcommand{\ghlink}[1]{\,\href{https://github.com/\ghuser/#1}{\faGithub}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===============================================================================
+\begin{document}
+
+%--------------------------------- HEADER --------------------------------------
+\noindent
+\begin{minipage}[c]{3.1cm}
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.45cm);
+    % Portrait photo (3:4) shifted down so the face sits in the centre of the circle.
+    \node at (0,-0.45cm) {\includegraphics[width=3.2cm]{zeno_cv_small.jpg}};
+  \end{tikzpicture}
+\end{minipage}%
+\hspace{0.5cm}%
+\begin{minipage}[c]{\dimexpr\textwidth-3.6cm\relax}
+  {\Huge\scshape\color{accent} István Zénó Bartha} \\[3pt]
+  {\large IT Operations Engineering Student \,$\cdot$\, Workflow Automation \& AI Workflows} \\[5pt]
+  \small
+  \faMobile*~+36 20 263 7679 \quad
+  \href{mailto:zenoka14@gmail.com}{\faEnvelope~zenoka14@gmail.com} \quad
+  \faMapMarker*~Budapest, Hungary \\[2pt]
+  \href{https://www.linkedin.com/in/z\%C3\%A9n\%C3\%B3-bartha-a9814b354/}{\faLinkedin~LinkedIn} \quad
+  \href{https://github.com/juanmiguelaasg}{\faGithub~github.com/juanmiguelaasg}
+\end{minipage}
+
+\vspace{4pt}
+
+%--------------------------------- ABOUT ME ------------------------------------
+\section{About Me}
+\small
+I am an IT Operations Engineering student at Óbuda University with a genuine interest in how IT systems are kept
+running reliably -- and how automation and AI can make that work simpler. I like to understand problems from the ground
+up, I learn quickly, and I enjoy turning repetitive tasks into clear, well-structured workflows. I am looking for an
+opportunity to join an Operations team, where I can contribute, learn from experienced colleagues and grow in a real
+corporate environment.
+\normalsize
+
+%-------------------------- EDUCATION AND TRAINING -----------------------------
+\section{Education and Training}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Óbuda University}{Budapest, Hungary}
+      {BProf in IT Operations Engineering (Üzemmérnök-informatikus) \,--\, \textbf{GPA: 4.2/5.0}}{Sept. 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant coursework:} Computer Networks, Databases, Embedded and Sensor Systems, Systems Theory,
+          Fundamentals of Software Development, Problem Solving with Programming, Electronics, Entrepreneurship and
+          Project Management, Discrete Mathematics, Calculus (Analysis)}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Hungarian University of Agriculture and Life Sciences (MATE)}{Budapest, Hungary}
+      {BSc studies in Food Engineering -- not completed; changed direction to IT}{2021 -- 2024}
+    \resumeSubheading
+      {Saint Margaret High School (Szent Margit Gimnázium)}{Budapest, Hungary}
+      {Secondary School Leaving Certificate (Érettségi)}{2017 -- 2021}
+      \resumeItemListStart
+        \resumeItem{\textbf{Advanced level:} English \quad $\cdot$ \quad \textbf{Standard level:} Mathematics, Informatics}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Ádám Jenő Primary School, Újbuda}{Budapest, Hungary}
+      {Primary education}{2009 -- 2017}
+  \resumeSubHeadingListEnd
+
+%---------------------------------- PROJECTS -----------------------------------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{System Process Monitor}\ghlink{SystemProcessMonitor} $|$ \emph{Python, SQL, time series, anomaly detection, webhooks, Docker}}{Personal project}
+      \resumeItemListStart
+        \resumeItem{Lightweight, locally running \textbf{Python monitoring agent} that collects system- and process-level metrics
+          (CPU, memory, disk, network, processes and threads) and stores them as \textbf{time series in SQL (SQLite)}.}
+        \resumeItem{\textbf{Anomaly detection} with rolling baselines (EWMA + z-score) instead of fixed thresholds, so the
+          machine's usual load does not trigger alerts -- only sudden deviations do.}
+        \resumeItem{Deduplicated alerts are forwarded as \textbf{incidents via webhook / REST} (open and resolve, stable dedup
+          key, retries), so a ticketing system can process them.}
+        \resumeItem{Desktop interface with a \textbf{live dashboard}, SQL reports and a rule editor; the agent can also run
+          headless and in \textbf{Docker}.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Automated API Health-Checker}\ghlink{api-health-checker} $|$ \emph{Python, REST, YAML, Azure DevOps}}{Personal project}
+      \resumeItemListStart
+        \resumeItem{Developed a scheduled checker that validates \textbf{REST endpoints} -- status code, response time and
+          \textbf{JSON schema} -- defined declaratively in YAML; also runs as a step in an \textbf{Azure DevOps pipeline}.}
+        \resumeItem{Retry and confirmation logic prevents false alarms; tracks \textbf{uptime against SLA targets} per endpoint and
+          publishes a simple status page.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{AI Log Analyzer}\ghlink{ai-log-analyzer} $|$ \emph{Python, LLM, RAG}}{Personal project}
+      \resumeItemListStart
+        \resumeItem{Parses and normalises logs from multiple sources and \textbf{clusters recurring errors}, turning hundreds of
+          lines into a handful of distinct issues.}
+        \resumeItem{Uses an \textbf{LLM with retrieval over internal documentation} to summarise each issue, suggest a probable
+          root cause and link the relevant runbook; results below a \textbf{confidence threshold} go to human review.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Business and Project Plan for an IT Services Company}}{University project}
+      \resumeItemListStart
+        \resumeItem{Prepared a complete plan for a fictional IT services Ltd.: \textbf{service portfolio}, \textbf{operating
+          processes} (support, delivery, onboarding), organisation, \textbf{budget}, milestone \textbf{schedule} and
+          \textbf{risk register}.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Pseudo-3D Raycasting Engine in the Terminal}\ghlink{DOOMgame} $|$ \emph{C\#, .NET}}{University project}
+      \resumeItemListStart
+        \resumeItem{Implemented a first-person, Doom-inspired \textbf{raycasting} renderer running in a plain terminal, with map
+          loading, movement, \textbf{collision detection} and a fixed-timestep game loop.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Smart Waste Bin} $|$ \emph{C, Arduino (register level)}}{University project}
+      \resumeItemListStart
+        \resumeItem{Programmed the microcontroller \textbf{directly through its registers} (timers, GPIO, \textbf{interrupts})
+          instead of high-level libraries; sensor-driven lid control and fill-level measurement.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Robot Vacuum Control} $|$ \emph{ROS2}}{University project}
+      \resumeItemListStart
+        \resumeItem{Developed \textbf{ROS2} nodes and topics for sensor processing and velocity commands, including obstacle
+          handling and area-coverage logic, validated in simulation.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%------------------------------- DIGITAL SKILLS --------------------------------
+\section{Digital Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming \& Scripting:} Python (requests, pandas, psutil), C\#, C, SQL, Bash, PowerShell, HTML, CSS \\
+     \textbf{Systems \& Networking:} Linux basics (CLI, permissions, SSH, systemd), networking fundamentals (TCP/IP, DNS,
+       DHCP, HTTP), Docker basics, Microsoft Azure fundamentals \\
+     \textbf{IT Service Management:} ITIL concepts -- incident, problem, change and request management; SLA; prioritisation \\
+     \textbf{Monitoring \& Observability:} metrics collection, baselining, anomaly detection, alert correlation;
+       Grafana, Prometheus basics \\
+     \textbf{Automation \& AI:} workflow orchestration, runbook automation, Power Automate, OpenAI / Azure OpenAI API,
+       prompt engineering, RAG, human-in-the-loop design \\
+     \textbf{APIs \& Testing:} REST APIs, Postman, webhooks, JSON, YAML \\
+     \textbf{Version Control \& CI/CD:} Git, GitHub, CI/CD basics (GitHub Actions, Azure DevOps Pipelines), Azure DevOps Boards \\
+     \textbf{Office:} Microsoft 365 (Excel, Word, PowerPoint, Teams) \\
+     \textbf{Embedded \& Robotics:} Arduino (register-level C), ROS2
+    }}
+ \end{itemize}
+
+%------------------------------ PERSONAL SKILLS --------------------------------
+\section{Personal Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Problem solving:} systematic debugging down to hardware level (register-level microcontroller programming) \\
+     \textbf{Teamwork:} delivered working prototypes in time-boxed teams at two hackathons, coordinating tasks in Azure DevOps
+       following Agile / Scrum basics \\
+     \textbf{Communication:} clear written and spoken communication in Hungarian and English; experience helping members of
+       the public as a hospital and library volunteer \\
+     \textbf{Organisation:} structured planning and documentation -- schedules, budgets and risk registers (IT company
+       business plan)
+    }}
+ \end{itemize}
+
+%------------------------------ LANGUAGE SKILLS --------------------------------
+\section{Language Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Hungarian:} Native \\
+     \textbf{English:} B2 -- Euroexam B2 language exam (2020), advanced-level school-leaving exam
+    }}
+ \end{itemize}
+
+%-------------------------- HACKATHONS & COMPETITIONS --------------------------
+\section{Hackathons and Competitions}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GDE MIT Hackathon}{2026}
+      {Participant -- team-based innovation hackathon; team workflow managed in \textbf{Azure DevOps}}{}
+    \resumeSubheading
+      {Byborg AI Hackathon}{2024}
+      {Participant -- AI-focused developer competition organised by Byborg Enterprises}{}
+  \resumeSubHeadingListEnd
+
+%------------------------ PROFESSIONAL DEVELOPMENT GOALS -----------------------
+\section{Professional Development Goals}
+  \begin{itemize}[leftmargin=0.3in, itemsep=1pt]
+    \resumeItem{\textbf{Real corporate experience:} learning how operations work at enterprise scale -- processes,
+      on-call and escalation, change management, cross-team collaboration and business impact. These are things a
+      university course can introduce, but only a real operations team can teach.}
+    \resumeItem{\textbf{Specialisation in IT Operations} at Óbuda University -- deepening my knowledge of infrastructure
+      operations, service management and observability, with the aim of writing my thesis on \textbf{AI-assisted
+      incident management}.}
+    \resumeItem{\textbf{Industry certifications:} ITIL 4 Foundation and Microsoft Azure Fundamentals, followed by
+      further platform certifications as I gain hands-on experience.}
+    \resumeItem{\textbf{Languages:} obtaining a \textbf{B2 certificate in German or Spanish} to work effectively in
+      international, multilingual teams.}
+    \resumeItem{\textbf{Long term:} growing into an \textbf{automation / site reliability engineer} who builds
+      self-healing operations -- where automation handles the routine, and people can focus on the problems that
+      really need them.}
+  \end{itemize}
+  \vspace{-4pt}
+
+%--------------------------- ADDITIONAL INFORMATION ----------------------------
+\section{Additional Information}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Volunteering:} Hospital volunteer, Budapest (2021); Library volunteer, Budapest (2020 -- 2021) \\
+     \textbf{Hobbies:} esports, cooking, hiking, cycling, reading, TV series \\
+     \textbf{Driving licence:} Category B
+    }}
+ \end{itemize}
+
+\end{document}

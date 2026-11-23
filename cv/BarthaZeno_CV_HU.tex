@@ -1,0 +1,292 @@
+%-------------------------------------------------------------------------------
+% Bartha István Zénó – Önéletrajz (magyar változat)
+% Europass szakaszszerkezet, "Jake's Resume" vizuális stílus.
+% Fordítás: pdflatex / tectonic BarthaZeno_CV_HU.tex  (kell hozzá: zeno_cv_small.jpg)
+%-------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+%---------------------------- Colours & links ----------------------------------
+\definecolor{accent}{RGB}{28,63,110}   % deep navy
+\definecolor{muted}{RGB}{90,90,90}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Bartha István Zénó – Önéletrajz}, pdfauthor={Bartha István Zénó}}
+
+%---------------------------- Page layout --------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\pdfgentounicode=1
+
+%---------------------------- Sections -----------------------------------------
+\titleformat{\section}
+  {\vspace{-4pt}\color{accent}\scshape\raggedright\large}
+  {}{0em}{}
+  [\color{accent}\titlerule\vspace{-5pt}]
+
+%---------------------------- Custom commands ----------------------------------
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+
+% {Title}{Right top}{Subtitle}{Right bottom}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% {Title | stack}{Right label}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & \textit{\small\color{muted} #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Clickable GitHub icon next to a project title: \ghlink{repo-name}
+\newcommand{\ghuser}{juanmiguelaasg}
+\newcommand{\ghlink}[1]{\,\href{https://github.com/\ghuser/#1}{\faGithub}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===============================================================================
+\begin{document}
+
+%--------------------------------- HEADER --------------------------------------
+\noindent
+\begin{minipage}[c]{3.1cm}
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.45cm);
+    % Portrait photo (3:4) shifted down so the face sits in the centre of the circle.
+    \node at (0,-0.45cm) {\includegraphics[width=3.2cm]{zeno_cv_small.jpg}};
+  \end{tikzpicture}
+\end{minipage}%
+\hspace{0.5cm}%
+\begin{minipage}[c]{\dimexpr\textwidth-3.6cm\relax}
+  {\Huge\scshape\color{accent} Bartha István Zénó} \\[3pt]
+  {\large Üzemmérnök-informatikus hallgató \,$\cdot$\, Workflow automatizáció \& AI} \\[5pt]
+  \small
+  \faMobile*~+36 20 263 7679 \quad
+  \href{mailto:zenoka14@gmail.com}{\faEnvelope~zenoka14@gmail.com} \quad
+  \faMapMarker*~Budapest \\[2pt]
+  \href{https://www.linkedin.com/in/z\%C3\%A9n\%C3\%B3-bartha-a9814b354/}{\faLinkedin~LinkedIn} \quad
+  \href{https://github.com/juanmiguelaasg}{\faGithub~github.com/juanmiguelaasg}
+\end{minipage}
+
+\vspace{4pt}
+
+%--------------------------------- ABOUT ME ------------------------------------
+\section{Bemutatkozás}
+\small
+Üzemmérnök-informatikus hallgató vagyok az Óbudai Egyetemen. Őszintén érdekel, hogyan lehet az IT-rendszereket
+megbízhatóan működtetni -- és hogyan tehetik ezt a munkát egyszerűbbé az automatizáció és az AI. Szeretem a problémákat
+az alapjaiktól megérteni, gyorsan tanulok, és szívesen alakítom az ismétlődő feladatokat átlátható, jól felépített
+munkafolyamatokká. Olyan lehetőséget keresek egy Operation teamben, ahol hozzá tudok tenni a csapat munkájához,
+tanulhatok tapasztalt kollégáktól, és valódi vállalati környezetben fejlődhetek.
+\normalsize
+
+%-------------------------- EDUCATION AND TRAINING -----------------------------
+\section{Tanulmányok}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Óbudai Egyetem}{Budapest}
+      {BProf Üzemmérnök-informatikus \,--\, \textbf{Tanulmányi átlag: 4,2/5,0}}{2024. szept. -- jelenleg}
+      \resumeItemListStart
+        \resumeItem{\textbf{Releváns tárgyak:} Számítógép-hálózatok, Adatbázisok, Beágyazott és érzékelőrendszerek,
+          Rendszerelmélet, Szoftverfejlesztés alapjai, Problémamegoldás programozással, Elektronika, Vállalkozás és
+          projektmenedzsment, Diszkrét matematika, Analízis}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Magyar Agrár- és Élettudományi Egyetem (MATE)}{Budapest}
+      {Élelmiszermérnök BSc tanulmányok -- nem fejeztem be; szakmát váltottam az IT irányába}{2021 -- 2024}
+    \resumeSubheading
+      {Szent Margit Gimnázium}{Budapest}
+      {Érettségi}{2017 -- 2021}
+      \resumeItemListStart
+        \resumeItem{\textbf{Emelt szint:} Angol \quad $\cdot$ \quad \textbf{Középszint:} Matematika, Informatika}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Újbudai Ádám Jenő Általános Iskola}{Budapest}
+      {Általános iskola}{2009 -- 2017}
+  \resumeSubHeadingListEnd
+
+%---------------------------------- PROJECTS -----------------------------------
+\section{Projektek}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{System Process Monitor}\ghlink{SystemProcessMonitor} $|$ \emph{Python, SQL, idősorok, anomáliadetektálás, webhook, Docker}}{Saját projekt}
+      \resumeItemListStart
+        \resumeItem{Könnyűsúlyú, lokálisan futó \textbf{Python monitorozó ágens}, amely rendszer- és folyamatszintű metrikákat
+          gyűjt (CPU, memória, lemez, hálózat, folyamatok és szálak), és \textbf{idősorként SQL-ben (SQLite)} tárolja őket.}
+        \resumeItem{\textbf{Anomáliadetektálás} gördülő baseline-nal (EWMA + z-score) fix küszöbök helyett, így a gép megszokott
+          terhelése nem vált ki riasztást -- csak a hirtelen eltérés.}
+        \resumeItem{A duplikációszűrt riasztásokat \textbf{incidensként továbbítja webhookon / REST-en} (megnyitás és lezárás,
+          stabil dedup kulcs, újrapróbálás), így egy ticketkezelő rendszer fel tudja dolgozni őket.}
+        \resumeItem{Asztali felület \textbf{élő dashboarddal}, SQL-riportokkal és szabályszerkesztővel; az ágens ablak nélkül és
+          \textbf{Dockerben} is futtatható.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Automated API Health-Checker}\ghlink{api-health-checker} $|$ \emph{Python, REST, YAML, Azure DevOps}}{Saját projekt}
+      \resumeItemListStart
+        \resumeItem{Ütemezetten futó ellenőrző, amely a YAML-ban leírt \textbf{REST végpontokat} teszteli -- státuszkód, válaszidő
+          és \textbf{JSON-séma} --; egy \textbf{Azure DevOps pipeline} lépéseként is fut.}
+        \resumeItem{Újrapróbálás és megerősítési logika szűri a téves riasztásokat; végpontonként méri a \textbf{rendelkezésre
+          állást az SLA-célhoz}, és egyszerű státuszoldalt készít.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{AI Log Analyzer}\ghlink{ai-log-analyzer} $|$ \emph{Python, LLM, RAG}}{Saját projekt}
+      \resumeItemListStart
+        \resumeItem{Több forrásból érkező logokat dolgoz fel és egységesít, majd \textbf{klaszterezi az ismétlődő hibákat}, így
+          több száz sorból néhány jól elkülönülő probléma lesz.}
+        \resumeItem{Egy \textbf{LLM a belső dokumentációban keresve} összefoglalja az egyes problémákat, valószínű kiváltó okot
+          javasol és a releváns runbookra mutat; a \textbf{konfidencia-küszöb} alatti eredmények emberi felülvizsgálatra kerülnek.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{IT Kft. vállalkozási és projektterve}}{Egyetemi projekt}
+      \resumeItemListStart
+        \resumeItem{Egy kitalált IT-szolgáltató Kft. teljes tervének elkészítése: \textbf{szolgáltatási portfólió},
+          \textbf{működési folyamatok} (support, szállítás, ügyfél-onboarding), szervezet, \textbf{költségvetés},
+          mérföldkövekre bontott \textbf{ütemterv} és \textbf{kockázati nyilvántartás}.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Pszeudo-3D raycasting motor a terminálban}\ghlink{DOOMgame} $|$ \emph{C\#, .NET}}{Egyetemi projekt}
+      \resumeItemListStart
+        \resumeItem{Belső nézetes, Doom által ihletett \textbf{raycasting} renderer egyszerű terminálablakban, pályabetöltéssel,
+          mozgással, \textbf{ütközésvizsgálattal} és fix időlépéses játékciklussal.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Okos kuka} $|$ \emph{C, Arduino (regiszterszinten)}}{Egyetemi projekt}
+      \resumeItemListStart
+        \resumeItem{A mikrokontrollert \textbf{közvetlenül a regiszterein keresztül} programoztam (időzítők, GPIO,
+          \textbf{megszakítások}) magas szintű könyvtárak helyett; szenzorvezérelt fedélnyitás és telítettségmérés.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Robotporszívó vezérlés} $|$ \emph{ROS2}}{Egyetemi projekt}
+      \resumeItemListStart
+        \resumeItem{\textbf{ROS2} node-ok és topicok a szenzoradatok feldolgozására és a sebességparancsok kiadására,
+          akadálykezeléssel és területlefedési logikával, szimulációban tesztelve.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%------------------------------- DIGITAL SKILLS --------------------------------
+\section{Digitális készségek}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programozás \& szkriptelés:} Python (requests, pandas, psutil), C\#, C, SQL, Bash, PowerShell, HTML, CSS \\
+     \textbf{Rendszerek \& hálózatok:} Linux alapok (CLI, jogosultságok, SSH, systemd), hálózati alapok (TCP/IP, DNS,
+       DHCP, HTTP), Docker alapok, Microsoft Azure alapok \\
+     \textbf{IT-szolgáltatásmenedzsment:} ITIL fogalmak -- incident-, problem-, change- és request-kezelés; SLA; priorizálás \\
+     \textbf{Monitoring \& observability:} metrikagyűjtés, baseline-ok, anomáliadetektálás, riasztáskorreláció;
+       Grafana, Prometheus alapok \\
+     \textbf{Automatizáció \& AI:} workflow-orchesztráció, runbook automatizáció, Power Automate, OpenAI / Azure OpenAI API,
+       prompt engineering, RAG, human-in-the-loop tervezés \\
+     \textbf{API-k \& tesztelés:} REST API-k, Postman, webhookok, JSON, YAML \\
+     \textbf{Verziókezelés \& CI/CD:} Git, GitHub, CI/CD alapok (GitHub Actions, Azure DevOps Pipelines), Azure DevOps Boards \\
+     \textbf{Irodai eszközök:} Microsoft 365 (Excel, Word, PowerPoint, Teams) \\
+     \textbf{Beágyazott rendszerek \& robotika:} Arduino (regiszterszintű C), ROS2
+    }}
+ \end{itemize}
+
+%------------------------------ PERSONAL SKILLS --------------------------------
+\section{Személyes készségek}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Problémamegoldás:} szisztematikus hibakeresés egészen hardverszintig (regiszterszintű mikrokontroller-programozás) \\
+     \textbf{Csapatmunka:} két hackathonon időkorlátos csapatban készítettünk működő prototípust, a feladatokat Azure DevOps-ban,
+       Agile / Scrum alapelvek szerint koordinálva \\
+     \textbf{Kommunikáció:} világos írásbeli és szóbeli kommunikáció magyarul és angolul; kórházi és könyvtári önkéntesként
+       tapasztalat az emberek segítésében \\
+     \textbf{Szervezés:} strukturált tervezés és dokumentáció -- ütemtervek, költségvetések és kockázati nyilvántartások
+       (IT Kft. vállalkozási terv)
+    }}
+ \end{itemize}
+
+%------------------------------ LANGUAGE SKILLS --------------------------------
+\section{Nyelvtudás}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Magyar:} anyanyelv \\
+     \textbf{Angol:} B2 -- Euroexam B2 nyelvvizsga (2020), emelt szintű érettségi
+    }}
+ \end{itemize}
+
+%-------------------------- HACKATHONS & COMPETITIONS --------------------------
+\section{Hackathonok és versenyek}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GDE MIT Hackathon}{2026}
+      {Résztvevő -- csapatalapú innovációs hackathon; a csapatmunkát \textbf{Azure DevOps}-ban szerveztük}{}
+    \resumeSubheading
+      {Byborg AI Hackathon}{2024}
+      {Résztvevő -- a Byborg Enterprises AI-fókuszú fejlesztői versenye}{}
+  \resumeSubHeadingListEnd
+
+%------------------------ PROFESSIONAL DEVELOPMENT GOALS -----------------------
+\section{Szakmai fejlődési céljaim}
+  \begin{itemize}[leftmargin=0.3in, itemsep=1pt]
+    \resumeItem{\textbf{Valódi vállalati tapasztalat:} megtapasztalni, hogyan működik az üzemeltetés nagyvállalati
+      léptékben -- folyamatok, ügyelet és eszkaláció, change management, csapatok közötti együttműködés és üzleti hatás.
+      Ezeket az egyetem be tudja mutatni, de igazán csak egy valódi üzemeltetési csapatban lehet megtanulni.}
+    \resumeItem{\textbf{Üzemeltetési szakirány} az Óbudai Egyetemen -- az infrastruktúra-üzemeltetés, a
+      szolgáltatásmenedzsment és az observability mélyebb megismerése, a szakdolgozatomat pedig az
+      \textbf{AI-támogatott incidenskezelésről} szeretném írni.}
+    \resumeItem{\textbf{Szakmai minősítések:} ITIL 4 Foundation és Microsoft Azure Fundamentals, majd további
+      platformminősítések, ahogy gyakorlatot szerzek.}
+    \resumeItem{\textbf{Nyelvek:} \textbf{német vagy spanyol B2 nyelvvizsga} megszerzése, hogy nemzetközi, többnyelvű
+      csapatokban is hatékonyan dolgozzak.}
+    \resumeItem{\textbf{Hosszú távon:} \textbf{automatizációs / site reliability mérnökké} válni, aki öngyógyító
+      üzemeltetést épít -- ahol a rutint az automatizáció viszi, az emberek pedig a valóban nehéz problémákra
+      koncentrálhatnak.}
+  \end{itemize}
+  \vspace{-4pt}
+
+%--------------------------- ADDITIONAL INFORMATION ----------------------------
+\section{További információk}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Önkéntesség:} kórházi önkéntes, Budapest (2021); könyvtári önkéntes, Budapest (2020 -- 2021) \\
+     \textbf{Hobbik:} e-sport, főzés, túrázás, biciklizés, olvasás, sorozatok \\
+     \textbf{Jogosítvány:} B kategória
+    }}
+ \end{itemize}
+
+\end{document}
