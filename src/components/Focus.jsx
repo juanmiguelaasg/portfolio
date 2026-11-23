@@ -40,20 +40,20 @@ const Focus = () => {
 
       <div className="mt-10 p-6 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 via-transparent to-sky-500/5">
         <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-5 text-center">{f.pipelineTitle}</h3>
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center gap-3">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-3">
           {f.pipeline.map((step, idx) => (
             <React.Fragment key={step.name}>
               <a
                 href="#projects"
-                className="flex-1 max-w-xs mx-auto md:mx-0 w-full text-center px-5 py-4 bg-slate-900/80 border border-slate-700 rounded-xl hover:border-emerald-500/50 transition-all"
+                className="flex-1 max-w-xs mx-auto lg:mx-0 w-full text-center px-4 py-4 bg-slate-900/80 border border-slate-700 rounded-xl hover:border-emerald-500/50 transition-all"
               >
                 <div className="font-mono font-bold text-emerald-300">{step.name}</div>
                 <div className="text-xs text-slate-400 mt-1">{step.role}</div>
               </a>
               {idx < f.pipeline.length - 1 && (
                 <div className="flex justify-center text-slate-600">
-                  <ArrowRight size={20} className="hidden md:block" />
-                  <ArrowDown size={20} className="md:hidden" />
+                  <ArrowRight size={20} className="hidden lg:block" />
+                  <ArrowDown size={20} className="lg:hidden" />
                 </div>
               )}
             </React.Fragment>

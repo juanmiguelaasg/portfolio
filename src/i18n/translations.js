@@ -28,11 +28,12 @@ const en = {
     { label: 'Technologies', value: '30+' },
   ],
   focus: {
-    pipelineTitle: 'How my three personal projects fit together',
+    pipelineTitle: 'How my four personal projects fit together',
     pipeline: [
       { name: 'System Process Monitor', role: 'watches hosts & processes' },
       { name: 'API Health-Checker', role: 'checks services from the outside' },
       { name: 'AI Log Analyzer', role: 'explains what went wrong' },
+      { name: 'API Integration Hub', role: 'syncs healthy systems & plans the work' },
     ],
     sectionTitle: 'Focus',
     intro: 'The areas I work on in my studies and my own projects.',
@@ -271,11 +272,12 @@ const hu = {
     { label: 'Technológia', value: '30+' },
   ],
   focus: {
-    pipelineTitle: 'Hogyan kapcsolódik egymáshoz a három saját projektem',
+    pipelineTitle: 'Hogyan kapcsolódik egymáshoz a négy saját projektem',
     pipeline: [
       { name: 'System Process Monitor', role: 'figyeli a gépeket és folyamatokat' },
       { name: 'API Health-Checker', role: 'kívülről ellenőrzi a szolgáltatásokat' },
       { name: 'AI Log Analyzer', role: 'megmagyarázza, mi romlott el' },
+      { name: 'API Integration Hub', role: 'összeköti az ép rendszereket, tervezi a munkát' },
     ],
     sectionTitle: 'Fókusz',
     intro: 'Azok a területek, amelyekkel a tanulmányaim és a saját projektjeim során foglalkozom.',
