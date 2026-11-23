@@ -10,7 +10,11 @@ export const profile = {
   github: 'https://github.com/juanmiguelaasg',
   linkedin: 'https://www.linkedin.com/in/z%C3%A9n%C3%B3-bartha-a9814b354',
   photo: `${base}images/zeno.png`, // üresen monogram jelenik meg
-  cv: '',           // pl. `${base}BarthaZeno_CV.pdf` – üresen nincs letöltés gomb
+  // Önéletrajz nyelvenként – a letöltés gomb a kiválasztott nyelvűt adja. Üresen nincs gomb.
+  cv: {
+    hu: `${base}cv/Bartha_Istvan_Zeno_CV_HU.pdf`,
+    en: `${base}cv/Bartha_Istvan_Zeno_CV_EN.pdf`,
+  },
 };
 
 // Wikimedia Commons képek (szabad licenc). Közvetlenül a Wikimedia szerveréről töltődnek be.

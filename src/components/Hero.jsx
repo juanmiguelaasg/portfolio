@@ -7,8 +7,9 @@ const iconBtn =
   'p-2.5 bg-slate-900 border border-slate-800 rounded-xl text-slate-400 hover:text-white hover:border-slate-600 transition-all';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const h = t.hero;
+  const cvUrl = profile.cv?.[lang];
 
   return (
     <section id="about" className="relative pt-32 pb-12 overflow-hidden">
@@ -42,8 +43,8 @@ const Hero = () => {
             <a href="#contact" className="px-7 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 rounded-xl font-semibold transition-all text-sm border border-slate-700">
               {h.btnContact}
             </a>
-            {profile.cv && (
-              <a href={profile.cv} download className="px-7 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 rounded-xl font-semibold transition-all text-sm border border-slate-700 flex items-center gap-2">
+            {cvUrl && (
+              <a href={cvUrl} download hrefLang={lang} className="px-7 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 rounded-xl font-semibold transition-all text-sm border border-slate-700 flex items-center gap-2">
                 <Download size={15} />
                 {h.btnCV}
               </a>
