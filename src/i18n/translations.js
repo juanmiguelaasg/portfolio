@@ -23,7 +23,7 @@ const en = {
   },
   stats: [
     { label: 'GPA', value: '4.2' },
-    { label: 'Projects', value: '7' },
+    { label: 'Projects', value: '8' },
     { label: 'Hackathons', value: '2' },
     { label: 'Technologies', value: '30+' },
   ],
@@ -106,6 +106,16 @@ const en = {
         ],
       },
       {
+        title: 'API Integration Hub',
+        description: 'A desktop app that connects business systems (CRM, ERP, Helpdesk) over REST APIs, lets the team plan the integration work in Scrum and reports sync results and sprint status to Excel. It builds on my API Health-Checker.',
+        details: [
+          'Integrations are declared in YAML: source → filter → field mapping (paths, templates, transforms, value maps) → target, with API key, Bearer and Basic authentication.',
+          'Only new or changed records are sent (payload hash per record), so reruns never create duplicates; a health gate blocks the sync while a system is down, and 5xx errors are retried.',
+          'Built-in Scrum: backlog, sprints, a four-column board, burndown and velocity. Open high-priority Helpdesk tickets become backlog stories automatically.',
+          'One-click Excel report (openpyxl): run log, sprint backlog, burndown and velocity charts. CLI, demo APIs, 27 pytest tests and GitHub Actions CI on Ubuntu and Windows.',
+        ],
+      },
+      {
         title: 'IT Company Business & Project Plan',
         description: 'Complete business and project plan for a fictional IT services Ltd. (Kft.): service portfolio, operating processes, organisation, budget, schedule and risk analysis.',
         details: [
@@ -147,7 +157,7 @@ const en = {
     sectionTitle: 'Skills',
     categories: {
       'Programming & scripting': ['Python', 'C#', 'C', 'SQL', 'Bash', 'PowerShell', 'HTML', 'CSS'],
-      'Ops & AI workflow': ['ITSM / ITIL basics', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomaly detection', 'Runbook automation', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflows'],
+      'Ops & AI workflow': ['ITSM / ITIL basics', 'System integration (REST)', 'Excel reporting (openpyxl)', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomaly detection', 'Runbook automation', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflows'],
       'Systems & tools': ['Linux basics', 'Networking (TCP/IP, DNS, HTTP)', 'Docker basics', 'Grafana / Prometheus', 'Postman', 'REST API / webhooks', 'Git / GitHub', 'CI/CD basics', 'Azure DevOps', 'Azure fundamentals', 'Microsoft 365'],
       'Hardware & robotics': ['Arduino', 'Register-level C', 'ROS2', 'Sensors & interrupts'],
       'Mathematics': ['Discrete mathematics', 'Calculus (Analysis)'],
@@ -166,7 +176,7 @@ const en = {
         period: 'Sept 2024 – present',
         location: 'Budapest, Hungary',
         current: true,
-        highlights: ['Relevant coursework: Computer Networks, Databases, Embedded and Sensor Systems, Systems Theory, Fundamentals of Software Development, Problem Solving with Programming, Electronics, Entrepreneurship and Project Management, Discrete Mathematics, Calculus (Analysis)'],
+        highlights: ['Academic merit scholarship in the 2nd and 3rd semesters', 'Relevant coursework: Computer Networks, Databases, Embedded and Sensor Systems, Systems Theory, Fundamentals of Software Development, Problem Solving with Programming, Electronics, Entrepreneurship and Project Management, Discrete Mathematics, Calculus (Analysis)'],
       },
       {
         school: 'Hungarian University of Agriculture and Life Sciences (MATE)',
@@ -256,7 +266,7 @@ const hu = {
   },
   stats: [
     { label: 'Tanulmányi átlag', value: '4.2' },
-    { label: 'Projekt', value: '7' },
+    { label: 'Projekt', value: '8' },
     { label: 'Hackathon', value: '2' },
     { label: 'Technológia', value: '30+' },
   ],
@@ -339,6 +349,16 @@ const hu = {
         ],
       },
       {
+        title: 'API Integration Hub',
+        description: 'Desktop alkalmazás, amely REST API-kon keresztül köt össze üzleti rendszereket (CRM, ERP, Helpdesk), az integrációs munkát Scrumban tervezi, a szinkron eredményeit és a sprint állását pedig Excelbe riportolja. Az API Health-Checkerem továbbfejlesztése.',
+        details: [
+          'Az integrációkat YAML írja le: forrás → szűrés → mezőleképezés (útvonalak, sablonok, transzformációk, értéktáblák) → cél, API key, Bearer és Basic hitelesítéssel.',
+          'Csak az új vagy megváltozott rekordok mennek át (rekordonkénti payload-hash), így az újrafuttatás sosem hoz létre duplikátumot; a health gate leállítja a szinkront, ha egy rendszer nem elérhető, az 5xx hibákat pedig újrapróbálja.',
+          'Beépített Scrum: backlog, sprintek, négyoszlopos tábla, burndown és velocity. A Helpdesk nyitott, magas prioritású ticketjei automatikusan backlog-storyk lesznek.',
+          'Egy kattintásos Excel-riport (openpyxl): futási napló, sprint backlog, burndown és velocity diagram. CLI, demo API-k, 27 pytest teszt és GitHub Actions CI Ubuntun és Windowson.',
+        ],
+      },
+      {
         title: 'IT Kft. vállalkozási projektterv',
         description: 'Egy kitalált IT-szolgáltató Kft. teljes vállalkozási és projekttervének megtervezése és elkészítése: szolgáltatási portfólió, működési folyamatok, szervezet, költségvetés, ütemterv és kockázatelemzés.',
         details: [
@@ -380,7 +400,7 @@ const hu = {
     sectionTitle: 'Készségek',
     categories: {
       'Programozás & szkriptelés': ['Python', 'C#', 'C', 'SQL', 'Bash', 'PowerShell', 'HTML', 'CSS'],
-      'Ops & AI workflow': ['ITSM / ITIL alapok', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomáliadetektálás', 'Runbook automatizáció', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflow-k'],
+      'Ops & AI workflow': ['ITSM / ITIL alapok', 'Rendszerintegráció (REST)', 'Excel-riportolás (openpyxl)', 'Incident · Problem · Change', 'SLA', 'Monitoring & observability', 'Anomáliadetektálás', 'Runbook automatizáció', 'Power Automate', 'OpenAI / Azure OpenAI API', 'Prompt engineering', 'LLM workflow-k'],
       'Rendszerek & eszközök': ['Linux alapok', 'Hálózatok (TCP/IP, DNS, HTTP)', 'Docker alapok', 'Grafana / Prometheus', 'Postman', 'REST API / webhook', 'Git / GitHub', 'CI/CD alapok', 'Azure DevOps', 'Azure alapok', 'Microsoft 365'],
       'Hardver & robotika': ['Arduino', 'Regiszterszintű C', 'ROS2', 'Szenzorok & megszakítások'],
       'Matematika': ['Diszkrét matematika', 'Analízis'],
@@ -399,7 +419,7 @@ const hu = {
         period: '2024. szept. – jelenleg',
         location: 'Budapest',
         current: true,
-        highlights: ['Releváns tárgyak: Számítógép-hálózatok, Adatbázisok, Beágyazott és érzékelőrendszerek, Rendszerelmélet, Szoftverfejlesztés alapjai, Problémamegoldás programozással, Elektronika, Vállalkozás és projektmenedzsment, Diszkrét matematika, Analízis'],
+        highlights: ['Tanulmányi ösztöndíj a 2. és a 3. félévben', 'Releváns tárgyak: Számítógép-hálózatok, Adatbázisok, Beágyazott és érzékelőrendszerek, Rendszerelmélet, Szoftverfejlesztés alapjai, Problémamegoldás programozással, Elektronika, Vállalkozás és projektmenedzsment, Diszkrét matematika, Analízis'],
       },
       {
         school: 'Magyar Agrár- és Élettudományi Egyetem (MATE)',

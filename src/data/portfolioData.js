@@ -51,6 +51,15 @@ export const projects = [
     credit: 'Christiaan Colen, CC BY-SA 2.0, Flickr',
   },
   {
+    id: 'integration-hub',
+    category: 'ops',
+    tags: ['Python', 'REST API', 'Scrum', 'Excel', 'SQLite', 'CustomTkinter'],
+    ops: true,
+    github: 'https://github.com/juanmiguelaasg/api-integration-hub',
+    image: `${base}images/projects/integration-hub.png`, // saját képernyőkép – nincs forrásmegjelölés
+    imagePosition: 'object-left-top',
+  },
+  {
     id: 'bizplan',
     category: 'ops',
     tags: ['Projekttervezés', 'Folyamatok', 'Költségvetés', 'Kockázatkezelés'],
